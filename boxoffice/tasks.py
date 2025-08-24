@@ -47,7 +47,7 @@ def expire_specific_hold(hold_id):
                 increment_metric(f'holds_expired_event_{hold.event.id}')
                 
                 logger.info(
-                    f"✅ Hold expired successfully: {hold_id}",
+                    f"Hold expired successfully: {hold_id}",
                     extra={
                         'hold_id': hold_id,
                         'event_id': str(hold.event.id),
@@ -62,7 +62,7 @@ def expire_specific_hold(hold_id):
         # Hold doesn't exist or already processed
         logger.warning(f"Hold not found in database: {hold_id}")
     except Exception as e:
-        logger.error(f"❌ Error expiring hold {hold_id}: {str(e)}", exc_info=True)
+        logger.error(f"Error expiring hold {hold_id}: {str(e)}", exc_info=True)
     
     logger.info(f"Completed expire_specific_hold task for hold: {hold_id}")
 

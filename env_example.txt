@@ -1,0 +1,44 @@
+# Django Configuration
+SECRET_KEY=django-insecure-your-secret-key-here-change-in-production
+DEBUG=True
+ALLOWED_HOSTS=localhost,127.0.0.1,0.0.0.0
+
+# Database Configuration
+DATABASE_URL=sqlite:///db.sqlite3
+
+# Redis Configuration
+REDIS_URL=redis://localhost:6379/0
+
+# Celery Configuration
+CELERY_BROKER_URL=redis://localhost:6379/0
+CELERY_RESULT_BACKEND=redis://localhost:6379/0
+
+# Ticketing Service Configuration
+HOLD_EXPIRY_MINUTES=2
+MAX_HOLD_TTL_MINUTES=10
+API_KEY_HEADER=X-API-Key
+
+# Logging Configuration
+LOG_LEVEL=INFO
+
+# CORS Configuration
+CORS_ALLOW_ALL_ORIGINS=True
+
+# Admin Configuration
+ADMIN_USERNAME=admin
+ADMIN_EMAIL=admin@example.com
+ADMIN_PASSWORD=admin123
+
+# Development Settings
+TIME_ZONE=UTC
+LANGUAGE_CODE=en-us
+USE_I18N=True
+USE_TZ=True
+
+# Static Files
+STATIC_URL=/static/
+STATIC_ROOT=staticfiles/
+
+# Media Files
+MEDIA_URL=/media/
+MEDIA_ROOT=media/

@@ -184,7 +184,6 @@ class BookingView(APIView):
             # Clear expiry from Redis
             clear_hold_expiry(str(hold.id))
             
-                             # The scheduled expiry task will be ignored since hold status is now BOOKED
             
             # Update metrics
             metrics = Metrics.get_or_create_for_event(hold.event)
