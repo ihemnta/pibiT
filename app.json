@@ -1,0 +1,76 @@
+{
+  "name": "Hemanta's Box Office",
+  "description": "A ticketing service for managing events, holds, and bookings",
+  "repository": "https://github.com/yourusername/pibiT",
+  "logo": "https://node-js-sample.herokuapp.com/node.png",
+  "keywords": ["django", "python", "ticketing", "redis", "celery"],
+  "env": {
+    "SECRET_KEY": {
+      "description": "A secret key for Django",
+      "generator": "secret"
+    },
+    "DEBUG": {
+      "description": "Debug mode (False for production)",
+      "value": "False"
+    },
+    "ALLOWED_HOSTS": {
+      "description": "Comma-separated list of allowed hosts",
+      "value": ".herokuapp.com,.railway.app,.render.com"
+    },
+    "REDIS_URL": {
+      "description": "Redis URL for caching and Celery",
+      "required": true
+    },
+    "CELERY_BROKER_URL": {
+      "description": "Celery broker URL (same as REDIS_URL)",
+      "required": true
+    },
+    "CELERY_RESULT_BACKEND": {
+      "description": "Celery result backend URL (same as REDIS_URL)",
+      "required": true
+    },
+    "HOLD_EXPIRY_MINUTES": {
+      "description": "Default hold expiry time in minutes",
+      "value": "2"
+    },
+    "MAX_HOLD_TTL_MINUTES": {
+      "description": "Maximum hold TTL in minutes",
+      "value": "10"
+    },
+    "ADMIN_USERNAME": {
+      "description": "Django admin username",
+      "value": "admin"
+    },
+    "ADMIN_EMAIL": {
+      "description": "Django admin email",
+      "value": "admin@example.com"
+    },
+    "ADMIN_PASSWORD": {
+      "description": "Django admin password",
+      "value": "admin123"
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "basic"
+    },
+    "worker": {
+      "quantity": 1,
+      "size": "basic"
+    }
+  },
+  "addons": [
+    {
+      "plan": "heroku-redis:hobby-dev"
+    }
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ],
+  "scripts": {
+    "postdeploy": "python manage.py migrate && python set_admin_password.py"
+  }
+}
