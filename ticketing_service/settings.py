@@ -248,3 +248,9 @@ LOGGING = {
 HOLD_EXPIRY_MINUTES = config('HOLD_EXPIRY_MINUTES', default=2, cast=int)
 MAX_HOLD_TTL_MINUTES = config('MAX_HOLD_TTL_MINUTES', default=10, cast=int)
 API_KEY_HEADER = config('API_KEY_HEADER', default='X-API-Key')
+
+
+# CSRF Trusted Origins
+CSRF_TRUSTED_ORIGINS = [
+    "https://worker-production-0e5b.up.railway.app",
+]
