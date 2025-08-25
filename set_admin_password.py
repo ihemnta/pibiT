@@ -41,7 +41,7 @@ def set_admin_password():
     print(f"   Username: {admin_username}")
     print(f"   Email: {admin_email}")
     print(f"   Password: {admin_password}")
-    print(f"\n🔗 Admin URL: http://localhost:8000/admin/")
+    print(f"   Admin URL: http://localhost:8000/admin/")
 
 if __name__ == "__main__":
     set_admin_password()
