@@ -26,7 +26,7 @@ A simple ticketing system that lets you hold seats temporarily and then book the
 
 ## Quick Start
 
-### Using Docker (Easiest)
+### Using Docker (Local)
 
 ```bash
 # Clone the repo
